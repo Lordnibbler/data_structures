@@ -52,6 +52,30 @@ class SinglyLinkedList
   end
 
   def remove(value)
+    if @head.value == value
+      # @head is the node we're removing
+      # point @head to second node
+      @head = @head.next
+    else
+      # save references to current and previous nodes
+      # so we can delete and re-link
+      current_node  = @head.next
+      previous_node = @head
 
+      while current_node
+        if current_node.value == value
+          # remove the node, and re-link
+          previous_node.next = current_node.next
+
+          # exit the loop, return success
+          return true
+        end
+        previous_node = current_node
+        current_node  = current_node.next
+      end
+
+      # return nil if value is never found
+      nil
+    end
   end
 end
