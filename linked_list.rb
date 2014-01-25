@@ -39,7 +39,16 @@ class SinglyLinkedList
   end
 
   def find(value)
+    # start at head
+    current_node = @head
 
+    while !current_node.nil?
+      # check if value matches current node
+      return current_node if current_node.value == value
+
+      # otherwise continue walking the list
+      current_node = current_node.next
+    end
   end
 
   def remove(value)
