@@ -1,0 +1,29 @@
+#!/usr/bin/env ruby -Ilib
+
+require './tree'
+
+def new_line
+  puts "\r\n"
+end
+
+t1 = Node.new('first')
+p 'Tree with no children'
+p t1
+new_line
+
+t1.children << t2 = Node.new('second')
+p 'Tree with one child'
+p t1
+new_line
+
+t1.children << t3 = Node.new('third')
+p 'Tree with two children'
+p t1
+new_line
+
+4.times do |i|
+  t2.children << Node.new(i.to_s)
+end
+p 'Tree with child node with 4 children'
+p t1
+
