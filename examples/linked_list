@@ -1,0 +1,26 @@
+#!/usr/bin/env ruby -Ilib
+
+require './linked_list'
+
+def new_line
+  puts "\r\n"
+end
+
+list = SinglyLinkedList.new(Node.new('first'))
+p "New list"
+p list
+new_line
+
+list.add('second')
+list.add('third')
+p "List with three nodes"
+p list
+new_line
+
+p "Find node with value 'second'"
+p list.find('second')
+new_line
+
+list.remove('second')
+p "List with 'second' removed"
+p list
